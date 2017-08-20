@@ -34,7 +34,8 @@ class CRM
     when 4 then display_all_contacts_contact
     when 5 then search_by_attribute
     when 6 then abort "See Yuh"
-  end
+    end
+end
 
 
   def add_new_contact
@@ -55,20 +56,36 @@ class CRM
 
 
   def modify_existing_contact
-    
-  end
-
-  def delete_contact
-
-  end
-
-  def display_all_contacts
-
-  end
-
-  def search_by_attribute
+    p "modify"
+    p "first name: "
+    first_name = gets.chomp
+    contact = Contact.find_by(first_name_reader, first_name)
+    p "Press 1 to modify last name"
+    p "Press 2 to modify first name"
+    p "Press 3 to modify email"
+    p "Press 4 to modify notes"
+    # to be continued
 
   end
+  #
+  # def delete_contact
+  #
+  # end
+  #
+  # def display_all_contacts
+  #
+  # end
+  #
+  # def search_by_attribute
+  #
+  # end
 
 
 end
+
+
+
+end
+
+first_crm = CRM.new("CRM1")
+first_crm.main_menu
