@@ -51,7 +51,13 @@ end
     print 'Enter a Note: '
     note = gets.chomp
 
-    Contact.create(first_name, last_name, email, note)
+    contact = Contact.create(
+  first_name: first_name,
+  last_name:  last_name,
+  email:      email,
+  note:       note
+  )
+
   end
 
 
@@ -86,5 +92,6 @@ end
 
 end
 
-first_crm = CRM.new("CRM1")
-first_crm.main_menu
+at_exit do
+  ActiveRecord::Base.connection.close
+end
